@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Weather</title>
+    <title>Todays-Weather</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,38 +31,12 @@
         <div class="weather-status text-white text-center">
             <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
             <h1 id="place-name">Dhaka</h1>
-            <h3><span id="temp">38.06</span>&deg;C</h3>
+            <h3><span id="temp">27.5</span>&deg;C</h3>
             <h1 id="weather" class="lead">Clouds</h1>
         </div>
     </div>
 
-
-    <script>
-
-document.getElementById('src-btn').addEventListener('click',function(){
-
-const cityName = document.getElementById('cityName').value;
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=')
-        .then(res=>res.json())
-        .then(data=>{
-
-            const city= data.name;
-            const temp= data.main.temp;
-            const celcius = (temp/10).toFixed(2);
-
-            const user= data.weather[0];
-            const weather= user.main;
-
-document.getElementById('place-name').innerText = city;
-document.getElementById('temp').innerText = celcius;
-document.getElementById('weather').innerText = weather;
-
-        })
-
-})
-
-    </script>
+    <!-- javascript -->
+    <script src="js/main.js"></script>
 </body>
-
 </html>
